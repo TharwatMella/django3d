@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صمم ثوبك</title>
+    <link rel="stylesheet" href={% static 'Design Static/css/Design-Styles.css'%} />
+    <script src={% static 'Design Static/js/three.min.js'%}></script>
+    <script src={% static 'Design Static/js/fflate.min.js'%}></script>
+    <script src={% static 'Design Static/js/FBXLoader.js'%}></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+  <body>
+    <!-- شريط التنقل -->
+    <script>var data={'m1':'{%static '1withmodel.glb'%}',
+                      'm2':'{%static '2withmodel.glb'%}',
+                      'n2':'{%static '3_with_model_2.glb'%}',
+                      'r2':'{%static '3withmodel2+goldcollar.glb'%}'}</script>
+    
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-right">
+          <button class="menu-button" onclick="toggleMenu()">
+            <div class="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="List">القائمة</div>
+          </button>
+        </div>
+        <div class="navbar-left">
+          <span class="navbar-title">صمم ثوبك</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" id="menu-content">
+      <div class="customization-panel">
+        <!-- قسم المظهر -->
+        <div class="custom-dropdown">
+          <button class="dropdown-toggle">
+            المظهر<span class="icon">+</span>
+          </button>
+          
+          <div class="dropdown-menu">
+            <!-- صورة رقم 1 -->
+            <img id="m1" src={% static 'Design Static/images/Look/Look 1.png'%} alt="صورة رقم 1" />
+            <!-- صورة رقم 2 -->
+            <img id="m2" src={% static 'Design Static/images/Look/Look 2.png'%} alt="صورة رقم 2" />
+          </div>
+        </div>
+
+        <!-- قسم القماش -->
+        <div class="custom-dropdown">
+          <button class="dropdown-toggle">
+            القماش<span class="icon">+</span>
+          </button>
+          <div class="dropdown-menu">
+            <!-- صورة رقم 1 -->
+            <img id="n1" src={% static 'Design Static/images/Fabric/Fabric 1.png'%} alt="صورة رقم 1" />
+            <!-- صورة رقم 2 -->
+            <img id="n2" src={% static 'Design Static/images/Fabric/Fabric 2.jpg'%} alt="صورة رقم 2" />
+          </div>
+        </div>
+
+        <!-- قسم اللون -->
+        <div class="custom-dropdown">
+          <button class="dropdown-toggle">
+            اللون<span class="icon">+</span>
+          </button>
+          <div class="dropdown-menu">
+            <!-- صورة رقم 1 -->
+            <img id="l1" src={% static 'Design Static/images/Colors/white.png'%} alt="صورة رقم 1" />
+            <!-- صورة رقم 2 -->
+            <img id="l2" src={% static "Design Static/images/Colors/Gray.png"%} alt="صورة رقم 2" />
+            <!-- صورة رقم 3 -->
+            <img id="l3" src={% static 'Design Static/images/Colors/Blue.png'%} alt="صورة رقم 3" />
+            <!-- صورة رقم 4 -->
+            <img id="l4" src={% static 'Design Static/images/Colors/Green.png'%} alt="صورة رقم 4" />
+          </div>
+        </div>
+
+        <!-- قسم الرقبة -->
+        <div class="custom-dropdown">
+          <button class="dropdown-toggle">
+            الرقبة<span class="icon">+</span>
+          </button>
+          <div class="dropdown-menu">
+            <!-- صورة رقم 1 -->
+            <img id="r1" src={% static 'Design Static/images/Neck/Neck 1.png'%} alt="صورة رقم 1" />
+            <!-- صورة رقم 2 -->
+            <img id="r2" src={% static 'Design Static/images/Neck/Neck 2.png'%} alt="صورة رقم 2" />
+          </div>
+        </div>
+
+        <!-- قسم الكم -->
+        <div class="custom-dropdown">
+          <button class="dropdown-toggle">
+            الكم<span class="icon">+</span>
+          </button>
+          <div class="dropdown-menu">
+            <!-- صورة رقم 1 -->
+            <img id="k1" src={% static 'Design Static/images/Sleeve/Sleeve 1.png'%} alt="صورة رقم 1" />
+            <!-- صورة رقم 2 -->
+            <img id="k2" src={% static 'Design Static/images/Sleeve/Sleeve 2.png'%} alt="صورة رقم 2" />
+          </div>
+        </div>
+
+        <div class="P+B" style="max-width: 380px; background: #222222; margin-top: 125px">
+          <div class="price">0 &nbsp; ر.س</div>
+          <button type="button" style="margin-right: -19px">إرسال الطلب</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="three-container"></div>
+
+    <script src={% static 'Design Static/js/Design-Script.js'%}></script>
+  </body>
+
+  </html>

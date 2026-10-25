@@ -1,0 +1,294 @@
+html,
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* ============================
+  شريط التنقل العلوي
+============================ */
+
+.navbar {
+  width: 100%;
+  background-color: #000000;
+  border-bottom: 1px solid #454545;
+}
+
+.navbar-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-right {
+  order: 1;
+  margin-right: -470px;
+}
+
+.navbar-left {
+  order: 2;
+  margin-left: -410px;
+}
+
+/* ============================
+    زر القائمة الجانبية
+============================ */
+
+.menu-button:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.menu-button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  outline: none;
+  justify-content: flex-end;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+  flex-shrink: 0;
+}
+
+.List {
+  font-size: 25px;
+  margin-right: 5px;
+  margin-top: 3px;
+  margin-left: -30px;
+  flex-grow: 1;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu-button.active .menu-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-button.active .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.active .menu-icon span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* ============================
+    الحاوية الرئيسية للمحتوى
+============================ */
+
+.container {
+  margin: 0 auto;
+  padding-right: 20px;
+  text-align: center;
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.container.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.customization-panel {
+  text-align: right;
+  max-width: 380px;
+  margin-right: -7px;
+  border-left: 1px solid #454545;
+  border-right: 1px solid #454545;
+}
+
+/* ============================
+    القوائم المنسدلة للتخصيص
+============================ */
+
+.custom-dropdown {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.container.show .custom-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-toggle {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  font-size: 1em;
+  border: none;
+  border-bottom: 1px solid #000000;
+  text-align: right;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  border-radius: 0;
+  width: 380px;
+}
+
+.dropdown-toggle:hover {
+  background-color: #222;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+}
+
+.dropdown-toggle .icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  transition: transform 1s ease-in-out;
+}
+
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #333;
+  transition: max-height 1s ease-in-out;
+}
+
+/* ============================
+    صور الخيارات داخل القوائم
+============================ */
+
+.dropdown-menu img {
+  margin-right: 9px;
+  margin-bottom: 15px;
+  height: 80px;
+  width: calc(50% - 22px);
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 7px;
+  vertical-align: middle;
+}
+
+.dropdown-menu img.selected {
+  border: 3px solid #f00;
+}
+
+.custom-dropdown.active .dropdown-menu {
+  max-height: 500px;
+}
+
+.custom-dropdown.active .dropdown-toggle .icon {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.custom-dropdown + .custom-dropdown {
+  margin-top: 0;
+}
+
+/* ============================
+    السعر وزر الطلب
+============================ */
+
+.container.show .price,
+.container.show button {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.price {
+  font-size: 1.5em;
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-left: 150px;
+  padding-bottom: 25px;
+}
+
+button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 110px;
+}
+
+P + B {
+  padding-top: -500px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ============================
+    شريط التمرير المخصص
+============================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* ============================
+    حاوية عرض المجسم ثلاثي الأبعاد
+============================ */
+
+#three-container {
+  background: transparent;
+  width: 900px; 
+  height: 900px; 
+  position: absolute; 
+  top: 150px; 
+  left: 100px; 
+}
